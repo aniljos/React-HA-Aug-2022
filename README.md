@@ -32,5 +32,11 @@
 ### ES6
 
 1. Hoisting: All declarations are hoisted(moved) to the top of the respective scope
+2. let and const:  create block scopes, no hoisting
+3. global scope: There is a global object and all scopes varibales are members of the global object.
+4. global object: window in the browser
+5. functions: first-class types of JavaScript: store it in a variable, pass it as an argument to a function, return it from a function, store it in a collection 
+6. Spread operator: On any iterbale: Array, Object
+7. Template Literals: String interpolation
 
 
