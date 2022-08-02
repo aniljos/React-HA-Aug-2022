@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Hello from './components/Hello';
+import Counter from './components/Counter';
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +21,15 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <main>
+          {/* <Hello message="Hello World" color="blue"/>
+          <Hello message="React Application" color="red"/> */}
+
+          <Counter initCount={5}/>
+          <Counter initCount={10}/>
+          
+      </main>
     </div>
   );
 }
