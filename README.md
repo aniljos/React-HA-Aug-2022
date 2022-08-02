@@ -38,5 +38,7 @@
 5. functions: first-class types of JavaScript: store it in a variable, pass it as an argument to a function, return it from a function, store it in a collection 
 6. Spread operator: On any iterbale: Array, Object
 7. Template Literals: String interpolation
+8. Destructuring: On any iterbale: Array, Object
+9. modules: default export/import or named export/import
 
 
