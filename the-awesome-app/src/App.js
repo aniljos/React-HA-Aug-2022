@@ -3,6 +3,7 @@ import './App.css';
 
 import Hello from './components/Hello';
 import Counter from './components/Counter';
+import ListProducts from './components/ListProducts';
 
 function App() {
   return (
@@ -26,8 +27,10 @@ function App() {
           {/* <Hello message="Hello World" color="blue"/>
           <Hello message="React Application" color="red"/> */}
 
-          <Counter initCount={5}/>
-          <Counter initCount={10}/>
+          {/* <Counter initCount={5}/>
+          <Counter initCount={10}/> */}
+
+          <ListProducts/>
           
       </main>
     </div>
