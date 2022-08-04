@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React, {Component, PureComponent} from 'react'
 import axios from 'axios';
 import './ListProducts.css';
 import EditProduct from './EditProduct';
 
-class ListProducts extends Component{
+class ListProducts extends PureComponent{
 
     //state to be immutable
     state = {
@@ -13,8 +13,19 @@ class ListProducts extends Component{
 
     url = "http://localhost:9000/products";
 
+    constructor(props){
+        super(props);
+
+        console.log("[ListProducts constructor]");
+    }
+
+    componentWillMount(){
+        console.log("[ListProducts componentWillMount]");
+    }
+
     async componentDidMount(){
 
+        console.log("[ListProducts componentDidMount]");
         //const url = "http://localhost:9000/products";
         // axios
         //     .get(url)
@@ -74,6 +85,14 @@ class ListProducts extends Component{
         });
     }
 
+    editUpdate= (updatedProduct)=> {
+        alert("updating product " + updatedProduct.id);
+    }
+
+    editCancel = () => {
+        alert("cancelling the update");
+    }
+
     renderProducts(){
 
         const {products} = this.state;
@@ -102,6 +121,7 @@ class ListProducts extends Component{
 
     render(){
 
+        console.log("[ListProducts render]");
         const {products, selectedProduct} = this.state;
 
         return (
@@ -112,11 +132,35 @@ class ListProducts extends Component{
                 </div>
 
                 <div>
-                   {selectedProduct !== null ? <EditProduct currentProduct={selectedProduct}/> : null}
+                   {selectedProduct !== null ? 
+                            <EditProduct key={selectedProduct.id} 
+                                currentProduct={selectedProduct}
+                                onSave={this.editUpdate}
+                                onCancel={this.editCancel}/> : null}
                 </div>
 
             </div>
         )
+    }
+
+
+    componentWillReceiveProps(nextProps){
+        console.log("[ListProducts componentWillReceiveProps]", nextProps);
+    }
+
+    // shouldComponentUpdate(nextProps, nextState){
+
+    //     console.log("[ListProducts shouldComponentUpdate]", nextProps, nextState);
+
+    //     //continue with update 
+    //     return true;
+    // }
+
+    componentWillUpdate(nextProps, nextState){
+        console.log("[ListProducts componentWillUpdate]", nextProps, nextState);
+    }
+    componentDidUpdate(){
+        console.log("[ListProducts componentDidUpdate]");
     }
 
 }
