@@ -85,12 +85,31 @@ class ListProducts extends PureComponent{
         });
     }
 
-    editUpdate= (updatedProduct)=> {
-        alert("updating product " + updatedProduct.id);
+    editUpdate= async (updatedProduct)=> {
+        
+
+        try {
+
+            const url = this.url + "/" + updatedProduct.id;
+            await axios.put(url, updatedProduct);
+            const response = await axios.get(this.url);
+            this.setState({
+                products: response.data,
+                selectedProduct: null
+            });
+            alert("updated product " + updatedProduct.id);
+
+        } catch (error) {
+            alert("failed to update product " + updatedProduct.id);
+        }
     }
 
     editCancel = () => {
+        
         alert("cancelling the update");
+        this.setState({
+            selectedProduct: null
+        });
     }
 
     renderProducts(){
@@ -161,6 +180,9 @@ class ListProducts extends PureComponent{
     }
     componentDidUpdate(){
         console.log("[ListProducts componentDidUpdate]");
+    }
+    componentWillUnmount(){
+        console.log("[ListProducts componentWillUnmount]");
     }
 
 }
