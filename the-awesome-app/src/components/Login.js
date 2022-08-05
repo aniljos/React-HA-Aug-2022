@@ -1,12 +1,16 @@
 import { useRef, useState } from "react";
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
+
 
 function Login(){
 
     const [message, setMessage]= useState("");
     const nameInputRef = useRef(null);
     const pwdInputRef = useRef(null);
+    const navigate = useNavigate();
 
-    function login(){
+    async function login(){
 
         const name = nameInputRef.current.value;
         const password = pwdInputRef.current.value;
@@ -16,10 +20,16 @@ function Login(){
             setMessage("");
             try {
                 
-                const url = "http://localhost:9000/login";
+                const url = process.env.REACT_APP_BASE_URL + "/login";
+                const response = await axios.post(url, {name, password} );
+                setMessage("");
+                sessionStorage.setItem("isAuthenticated", "true");
+                navigate("/products");
 
             } catch (error) {
-                
+
+                setMessage("Invalid Credentials");
+                sessionStorage.removeItem("isAuthenticated");
             }
         }
         else{
