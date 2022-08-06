@@ -64,4 +64,15 @@
 3. Browser Storage: LocalStorage & Session Storage ==> not a very secure place
 4. Application Memory: More secure, Redux or React Context
 
+### Redux
+
+1. Redux Flow:  Store, Reduced, Actions, Dispatch, Subscribe
+2. Action Creators : Helper functions to create actions
+3. Middleware: Intercepting the action, logging, validations etc.
+4. Reducer: reducer has to be synchronous
+5. To make an Async call to process an action==> use a middleware
+6. Async Middleware: library, Thunk, Saga
+7. Redux Toolkit: Opionated library
+8. Redux Toolkit: Action creators, in the reducer the state can be directly changed, async oprations using thunk is simplified
+ 
 

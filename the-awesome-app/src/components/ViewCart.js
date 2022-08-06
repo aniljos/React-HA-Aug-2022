@@ -1,12 +1,14 @@
 import {useSelector, useDispatch} from 'react-redux';
+import { removeItemFromCartAction } from '../state/redux/actionCreators';
 
 function ViewCart(){
 
     const cart = useSelector(state => state.gadgets.cart);
     const dispatch = useDispatch();
 
-    function remove(product){
-        dispatch({type: "REMOVE_FROM_CART", id: product.id})
+    function remove(item){
+        //dispatch({type: "REMOVE_FROM_CART", id: product.id})
+        dispatch(removeItemFromCartAction(item.product.id));
     }   
 
     return (
