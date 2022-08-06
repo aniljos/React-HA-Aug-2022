@@ -42,3 +42,26 @@
 9. modules: default export/import or named export/import
 
 
+### React Hooks
+
+1. useState
+2. useRef
+3. useEffect
+4. useCallback -- Optimization
+5. useImperativeHandle -- what ref is pointing to 
+
+
+### Functional Components
+
+1. React.memo -- Optimization
+2. React.forwardRef -- creates refs for functional components
+
+
+### State Management
+
+1. Improves the User Expereinec
+2. Conversational State -- Session State ===> We need to store this state
+3. Browser Storage: LocalStorage & Session Storage ==> not a very secure place
+4. Application Memory: More secure, Redux or React Context
+
+
