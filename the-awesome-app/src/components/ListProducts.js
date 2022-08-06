@@ -12,6 +12,7 @@ class ListProducts extends PureComponent{
     };
 
     url = "http://localhost:9000/products";
+    editProductRef = React.createRef(null);
 
     constructor(props){
         super(props);
@@ -112,6 +113,11 @@ class ListProducts extends PureComponent{
         });
     }
 
+    callEditProdRef = () => {
+
+        console.log("editproductRef", this.editProductRef.current.state.product);
+    }
+
     renderProducts(){
 
         const {products} = this.state;
@@ -151,8 +157,15 @@ class ListProducts extends PureComponent{
                 </div>
 
                 <div>
+                    {selectedProduct !== null? 
+                            <button className='btn btn-warning' onClick={this.callEditProdRef}>Call EditProductRef</button> : null}
+                </div>
+
+                <div>
                    {selectedProduct !== null ? 
-                            <EditProduct key={selectedProduct.id} 
+                            <EditProduct 
+                                ref={this.editProductRef}
+                                key={selectedProduct.id} 
                                 currentProduct={selectedProduct}
                                 onSave={this.editUpdate}
                                 onCancel={this.editCancel}/> : null}

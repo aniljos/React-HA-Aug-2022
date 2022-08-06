@@ -29,9 +29,16 @@ function Search(){
         }
     }, []);
 
+    useEffect(() => {
+
+        console.log("useEffect: equivalent to the componentDidUpdate: invoked only whenever the dependency(results) changes")
+
+    }, [results]);
+
     function change(evt){
 
         setSearchKey(evt.target.value);
+
     }
     async function search(){
         

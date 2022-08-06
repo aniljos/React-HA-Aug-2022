@@ -1,4 +1,5 @@
 
+import React from 'react';
 import {Link} from 'react-router-dom';
 import {appRoutes} from '../routes/routes';
 
@@ -53,4 +54,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default React.memo(Header);

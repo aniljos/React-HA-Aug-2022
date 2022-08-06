@@ -26,12 +26,12 @@ function App() {
                 if(item.secure){
                   return (
                     <Route key={item.path} path={item.path} 
-                          element={<ProtectedRoute><Component/></ProtectedRoute>} />
+                          element={<ProtectedRoute>{item.component}</ProtectedRoute>} />
                   )
                 }
                 else{
                   return (
-                    <Route key={item.path} path={item.path} element={<Component/>} />
+                    <Route key={item.path} path={item.path} element={item.component} />
                   )
                 }
                 
