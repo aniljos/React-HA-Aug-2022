@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-
+import {useDispatch} from 'react-redux';
 
 function Login(){
 
@@ -9,6 +9,7 @@ function Login(){
     const nameInputRef = useRef(null);
     const pwdInputRef = useRef(null);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     async function login(){
 
@@ -23,13 +24,30 @@ function Login(){
                 const url = process.env.REACT_APP_BASE_URL + "/login";
                 const response = await axios.post(url, {name, password} );
                 setMessage("");
-                sessionStorage.setItem("isAuthenticated", "true");
+                //sessionStorage.setItem("isAuthenticated", "true");
+                dispatch({
+                    type: "SET_AUTH",
+                    payload: {
+                        isAuthenticated : true,
+                        accessToken: response.data.accessToken,
+                        refreshToken: response.data.refreshToken
+                    }
+                });
+
                 navigate("/products");
 
             } catch (error) {
 
                 setMessage("Invalid Credentials");
-                sessionStorage.removeItem("isAuthenticated");
+                //sessionStorage.removeItem("isAuthenticated");
+                dispatch({
+                    type: "SET_AUTH",
+                    payload: {
+                        isAuthenticated : false,
+                        accessToken: "",
+                        refreshToken: ""
+                    }
+                });
             }
         }
         else{

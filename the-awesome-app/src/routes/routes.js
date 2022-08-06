@@ -1,4 +1,5 @@
 import Counter from "../components/Counter";
+import GadgetStore from "../components/GadgetStore";
 import Hello from "../components/Hello";
 import ListProducts from "../components/ListProducts";
 import Login from "../components/Login";
@@ -26,14 +27,14 @@ export const appRoutes = [
         title: "Products",
         component: <ListProducts/>,
         isMenuItem: true,
-        secure: false
+        secure: true
     },
     {
         path: "/search",
         title: "Search",
         component: <Search/>,
         isMenuItem: true,
-        secure: false
+        secure: true
     },
     {
         path: "/login",
@@ -46,6 +47,13 @@ export const appRoutes = [
         path: "/register",
         title: "Register",
         component: <Register/>,
+        isMenuItem: true,
+        secure: false
+    },
+    {
+        path: "/gadgets",
+        title: "Gadgets",
+        component: <GadgetStore/>,
         isMenuItem: true,
         secure: false
     }
