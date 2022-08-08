@@ -49,7 +49,9 @@
 3. useEffect
 4. useCallback -- Optimization
 5. useImperativeHandle -- what ref is pointing to 
-
+6. useContext
+7. useReducer - implement the reducer patter for state update, complex state, centralize the logic for state update
+ 
 
 ### Functional Components
 
@@ -77,3 +79,17 @@
 9. Redux-Persist
  
 
+### React Context
+
+1. Manages State
+2. useContext: Access the state down the heirarchy
+3. UpdateState: some state change should happen to render the views 
+
+
+### Redux vs. React Context
+
+1. Redux is a 3rd party library, React Context is part of react library
+2. React Context is a good option if child component need to just access/read the data
+3. Redux is good when child components need to read and write(there is a proper flow)
+4. React Context: can have multiple contexts
+5. Redux: A single store

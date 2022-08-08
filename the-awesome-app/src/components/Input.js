@@ -40,7 +40,7 @@ const Input = React.memo(React.forwardRef((props, ref)=> {
     return (
         <div className={mode === "dark" ? "form-group" : "input-group mb-3"}>
             {mode === "dark" ? <label>{label}</label> : null}
-            {mode === "light" ? <span class="input-group-text">{label}</span> : null}
+            {mode === "light" ? <span className="input-group-text">{label}</span> : null}
             <input className="form-control" {...otherProps} ref={inputRef}/>
            
         </div>

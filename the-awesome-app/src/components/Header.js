@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import {appRoutes} from '../routes/routes';
 import { AppThemeContext } from '../state/context/AppThemeContext';
+import ThemeSwitchButton from '../state/context/ThemeSwitchButton';
 
 function Header() {
 
@@ -26,6 +27,9 @@ function Header() {
                 )
             })}
 
+            <li className="nav-item">
+                <ThemeSwitchButton/>
+            </li>
 
             {/* <li className="nav-item">
               <Link className="nav-link" to="/home">
