@@ -13,7 +13,7 @@ function EditCustomer() {
       </div>
       <div className="form-group">
         <label for={id + "-location"}>Location</label>
-        <select id={id + "-location"} class="form-select">
+        <select id={id + "-location"} className="form-select">
           <option selected>Select a Location</option>
           <option value="Bangalore">Bangalore</option>
           <option value="Chennai">Chennai</option>
