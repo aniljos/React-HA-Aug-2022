@@ -30,7 +30,8 @@ function Login(){
                     payload: {
                         isAuthenticated : true,
                         accessToken: response.data.accessToken,
-                        refreshToken: response.data.refreshToken
+                        refreshToken: response.data.refreshToken,
+                        userName: name
                     }
                 });
 
@@ -45,7 +46,8 @@ function Login(){
                     payload: {
                         isAuthenticated : false,
                         accessToken: "",
-                        refreshToken: ""
+                        refreshToken: "",
+                        userName: ""
                     }
                 });
             }

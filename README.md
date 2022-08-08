@@ -74,5 +74,6 @@
 6. Async Middleware: library, Thunk, Saga
 7. Redux Toolkit: Opionated library
 8. Redux Toolkit: Action creators, in the reducer the state can be directly changed, async oprations using thunk is simplified
+9. Redux-Persist
  
 

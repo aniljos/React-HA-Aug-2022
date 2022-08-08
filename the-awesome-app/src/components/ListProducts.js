@@ -2,6 +2,7 @@ import React, {Component, PureComponent} from 'react'
 import axios from 'axios';
 import './ListProducts.css';
 import EditProduct from './EditProduct';
+import {connect} from 'react-redux';
 
 class ListProducts extends PureComponent{
 
@@ -152,6 +153,7 @@ class ListProducts extends PureComponent{
         return (
             <div>
                 <h3>List Products</h3>
+                <div className='alert alert-info'>{"Welcome " + this.props.auth.userName}</div>
                 <div style={{display: 'flex', flexFlow: 'row wrap', justifyContent: 'center'}}>
                     {this.renderProducts()}
                 </div>
@@ -200,4 +202,28 @@ class ListProducts extends PureComponent{
 
 }
 
-export default ListProducts;
+//mapping of the redux state to the component props
+const mapStateToProps = (reduxState) => {
+
+    //return an object with the state we want to access
+    return {
+        auth: reduxState.auth,
+        //gadgets: reduxState.gadgets
+    }
+}
+
+//mapping of the redux dispath to the component props
+const mapDispatchToProps = (dispatch) => {
+
+    //return an object with the dispatch methods
+    return {
+
+        setAuth: (payload) => dispatch({type: "SET_AUTH", payload}) 
+    }
+}
+
+
+//connect(mapStateToProps, mapDispatchTpProps)
+//connect(useSelector, useDispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(ListProducts);
+//export default ListProducts;

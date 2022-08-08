@@ -1,4 +1,6 @@
 const initState = {
+
+    userName: "",
     isAuthenticated: false,
     accessToken: "",
     refreshToken: ""

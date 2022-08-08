@@ -1,12 +1,17 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import {appRoutes} from '../routes/routes';
+import { AppThemeContext } from '../state/context/AppThemeContext';
 
 function Header() {
+
+  const theme = useContext(AppThemeContext);
+  const mode = theme.mode;
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             React Training

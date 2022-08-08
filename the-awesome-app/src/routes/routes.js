@@ -5,6 +5,7 @@ import ListProducts from "../components/ListProducts";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Search from "../components/Search";
+//import {Search} from "../components/Search";
 import ViewCart from "../components/ViewCart";
 
 export const appRoutes = [
@@ -35,7 +36,7 @@ export const appRoutes = [
         title: "Search",
         component: <Search/>,
         isMenuItem: true,
-        secure: true
+        secure: false
     },
     {
         path: "/login",

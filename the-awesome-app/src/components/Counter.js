@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import withBorder from '../hoc/withBorder';
 
 class Counter extends Component {
 
@@ -65,27 +66,33 @@ class Counter extends Component {
         //return the JSX
         return (
             <div>
-                <h3>Counter: {this.state.count}</h3>
+                <h3 className="alert alert-info">Counter: {this.state.count}</h3>
                 <p>This is a class component</p>
                 <div>
-                    <button onClick={this.inc}>Inc</button>&nbsp;
-                    <button onClick={this.decr}>Decr</button>
+                    <button className="btn btn-success" onClick={this.inc}>Inc</button>&nbsp;
+                    <button className="btn btn-warning" onClick={this.decr}>Decr</button>
                 </div>
+                <br/>
                 <div>
                     
                     {/* Controlled Input */}
-                    Count: <input type="number" 
+                    Count: <input type="number" className="form-control"
                                 placeholder='Count' value={this.state.count} onChange={this.change}/>
                 </div>
+                <br/>
+                <br/>
                 <div>
                     {/* Uncontrolled Input */}
-                    <input type="number" defaultValue={this.state.count} 
+                    <input className="form-control" type="number" defaultValue={this.state.count} 
                         placeholder="Update Count" ref={this.inputRef}/>&nbsp;
-                    <button onClick={this.update}>Update</button>                    
+                    <br/>
+                    <button className="btn btn-info" onClick={this.update}>Update</button>                    
                 </div>
             </div>
         )
     }
 }
 
-export default Counter;
+
+const SomeComponent = withBorder(Counter);
+export default SomeComponent;

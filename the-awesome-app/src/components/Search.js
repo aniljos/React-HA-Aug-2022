@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react';
 import axios from 'axios';
+import withBorder from '../hoc/withBorder';
 
 // state = {
 //     searchKey: ""
@@ -9,7 +10,7 @@ import axios from 'axios';
 // const searchKey = array[0];
 // const setSearchKey = array[1];
 
-function Search(){
+export function Search(){
 
     //console.log("invoking search...");
     const [searchKey, setSearchKey] = useState("");
@@ -89,4 +90,9 @@ function Search(){
     )
 }
 
-export default Search;
+export default withBorder(Search);
+
+// export default {
+//     Search: Search,
+//     SearchWithBorder: withBorder(Search)
+// }
