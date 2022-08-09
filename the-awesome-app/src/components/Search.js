@@ -67,7 +67,7 @@ export function Search(){
             <h3>Wiki Search</h3>
             <br/>
             <div className='alert alert-warning'>
-                Search Count: {counter}
+                Search Count: {counter.current}
             </div>
 
             <div>

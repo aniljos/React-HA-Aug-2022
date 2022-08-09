@@ -1,14 +1,25 @@
-import Counter from "../components/Counter";
+
+import React from "react";
 import EditCustomer from "../components/EditCustomer";
 import GadgetStore from "../components/GadgetStore";
 import Hello from "../components/Hello";
 import ListCustomers from "../components/ListCustomers";
-import ListProducts from "../components/ListProducts";
+
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Search from "../components/Search";
 //import {Search} from "../components/Search";
 import ViewCart from "../components/ViewCart";
+
+
+//static import
+//import Counter from "../components/Counter";
+//import ListProducts from "../components/ListProducts";
+
+//dynamic import
+
+const Counter = React.lazy(() => import('../components/Counter'));
+const ListProducts = React.lazy(() => import('../components/ListProducts'));
 
 export const appRoutes = [
 

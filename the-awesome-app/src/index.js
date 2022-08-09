@@ -10,6 +10,7 @@ import { theme } from "./state/context/theme";
 import AppThemeProvider from "./state/context/AppThemeProvider";
 import AppThemeProviderWithReducer from "./state/context/AppThemeProviderWithReducer";
 import AppErrorBoundary from "./error-boundary/AppErrorBoundary";
+import './axios/interceptors';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

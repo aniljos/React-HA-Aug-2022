@@ -12,7 +12,7 @@ class ListProducts extends PureComponent{
         selectedProduct: null
     };
 
-    url = "http://localhost:9000/products";
+    url = "http://localhost:9000/secure_products";
     editProductRef = React.createRef(null);
 
     constructor(props){
@@ -41,6 +41,7 @@ class ListProducts extends PureComponent{
 
         try {
             
+          //const headers = {"Authorization":  `Bearer ${this.props.auth.accessToken}`}
            const response =  await axios.get(this.url);
            console.log("success", response);
            this.setState({
