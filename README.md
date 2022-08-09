@@ -93,3 +93,10 @@
 3. Redux is good when child components need to read and write(there is a proper flow)
 4. React Context: can have multiple contexts
 5. Redux: A single store
+
+
+### React Router DOM
+1. v5 based on HOC => class and funcational
+2. v6 based on Hooks => functional
+3. Nested Routes  => Outlet
+4. Routes: Browser, Hash, Memory

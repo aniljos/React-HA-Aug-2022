@@ -1,6 +1,8 @@
 import Counter from "../components/Counter";
+import EditCustomer from "../components/EditCustomer";
 import GadgetStore from "../components/GadgetStore";
 import Hello from "../components/Hello";
+import ListCustomers from "../components/ListCustomers";
 import ListProducts from "../components/ListProducts";
 import Login from "../components/Login";
 import Register from "../components/Register";
@@ -36,7 +38,7 @@ export const appRoutes = [
         title: "Search",
         component: <Search/>,
         isMenuItem: true,
-        secure: false
+        secure: true
     },
     {
         path: "/login",
@@ -65,6 +67,20 @@ export const appRoutes = [
         component: <ViewCart/>,
         isMenuItem: true,
         secure: false
+    },
+    {
+        path: "/customers",
+        title: "Customers",
+        component: <ListCustomers/>,
+        isMenuItem: true,
+        secure: true
+    },
+    {
+        path: "/customers/:id",
+        title: "Edit Customer",
+        component: <EditCustomer/>,
+        isMenuItem: false,
+        secure: true
     }
 
 ]

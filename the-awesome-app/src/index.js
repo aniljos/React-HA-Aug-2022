@@ -9,6 +9,7 @@ import { AppThemeContext } from "./state/context/AppThemeContext";
 import { theme } from "./state/context/theme";
 import AppThemeProvider from "./state/context/AppThemeProvider";
 import AppThemeProviderWithReducer from "./state/context/AppThemeProviderWithReducer";
+import AppErrorBoundary from "./error-boundary/AppErrorBoundary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,9 @@ root.render(
     {/* <AppThemeProvider> */}
     <AppThemeProviderWithReducer>
       <Provider store={store}>
-        <App />
+        <AppErrorBoundary>
+              <App />
+        </AppErrorBoundary>
       </Provider>
     </AppThemeProviderWithReducer>
     {/* </AppThemeProvider> */}
