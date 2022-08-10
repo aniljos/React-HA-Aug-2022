@@ -43,7 +43,7 @@ function GadgetStore(){
 
         const productsView =  products.map((item, index) => {
             return (
-                <div className="col" key={index} >
+                <div className="col" key={index} data-testid="gadget">
                     <div className="card border-warning" >
                         <div className="card-body text-success">
                             <h5 className="card-title">{item.name}</h5>

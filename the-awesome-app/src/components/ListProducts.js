@@ -127,7 +127,7 @@ class ListProducts extends PureComponent{
         const result = products.map((product, index) => {
 
             return (
-                <div className='product' key={product.id}>
+                <div className='product' key={product.id} data-testid="product">
 
                     <p>Id: {product.id}</p>
                     <p>Name: {product.name}</p>
