@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 
 function Login(){
@@ -10,6 +10,7 @@ function Login(){
     const pwdInputRef = useRef(null);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const location = useLocation();
 
     async function login(){
 
@@ -34,8 +35,14 @@ function Login(){
                         userName: name
                     }
                 });
-
-                navigate("/products");
+                if(location.state){
+                    const to = location.state;
+                    navigate(to, {replace: true});
+                }
+                else{
+                    navigate("/products", {replace: true});
+                }
+                
 
             } catch (error) {
 

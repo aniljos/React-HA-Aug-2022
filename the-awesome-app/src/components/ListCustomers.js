@@ -21,7 +21,7 @@ const ListCustomers = () =>{
         try {
             
             const url = process.env.REACT_APP_BASE_URL + "/customers";
-            const response = await axios.get(url);
+            const response = await  axios.get(url);
             setCustomers(response.data);
 
         } catch (error) {

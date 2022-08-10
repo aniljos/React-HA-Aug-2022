@@ -28,7 +28,8 @@ export const appRoutes = [
         title: "Home",
         component: <Hello message="Hello World" color="slateblue"/>,
         isMenuItem: true,
-        secure: false
+        secure: false,
+        
     },
     {
         path: "/counter",

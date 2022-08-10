@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import MuiApp from "./MuiApp";
 import reportWebVitals from "./reportWebVitals";
 import { store } from "./state/redux/store";
 import { Provider } from "react-redux";
@@ -20,7 +21,8 @@ root.render(
     <AppThemeProviderWithReducer>
       <Provider store={store}>
         <AppErrorBoundary>
-              <App />
+              {/* <App /> */}
+              <MuiApp/>
         </AppErrorBoundary>
       </Provider>
     </AppThemeProviderWithReducer>
